@@ -38,7 +38,17 @@ $authors = $stmt->fetchAll();
 <?php } ?>
     </ul>
 
-    <a href="./edit.php">Muuda</a>
+    <a href="./edit.php?id=<?= $id; ?>">Muuda</a>
+    <br>
+
+    <form action="./delete.php" method="post">
+        <input type="hidden" name="id" value="<?= $id; ?>">
+        <button type="submit" name="action" value="delete">Kustuta</button>
+    </form>
+
+    <a href="index.php">
+        <button>Tagasi</button>
+    </a>
 
 </body>
 </html>
